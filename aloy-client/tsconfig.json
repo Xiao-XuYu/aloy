@@ -1,0 +1,15 @@
+{
+  "compilerOptions": {
+    "target": "ES2022",
+    "module": "CommonJS", // Electron 主进程通常使用 CommonJS
+    "outDir": "./dist", // 编译后的 JS 文件存放目录
+    "rootDir": "./src", // 你的 TS 源码目录
+    "strict": true, // 开启严格类型检查
+    "esModuleInterop": true, // 允许 import 导入 CommonJS 模块
+    "skipLibCheck": true,
+    "forceConsistentCasingInFileNames": true
+  },
+  "include": [
+    "src/**/*"
+  ]
+}

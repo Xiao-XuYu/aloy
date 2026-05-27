@@ -1,0 +1,30 @@
+{
+  "name": "aloy-client",
+  "version": "1.0.0",
+  "main": "src/main.ts",
+  "type": "commonjs",
+  "scripts": {
+    "start": "npm-run-all -p watch start-electron",
+    "start-electron": "nodemon --exec electron dist/main.js",
+    "build": "tsc",
+    "watch": "tsc -w",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "electron": "^41.0.3",
+    "serve-handler": "^6.1.7"
+  },
+  "devDependencies": {
+    "@electron/typescript-definitions": "^9.1.6",
+    "@types/electron": "^1.4.38",
+    "@types/node": "^25.9.1",
+    "nodemon": "^3.1.14",
+    "npm-run-all": "^4.1.5",
+    "ts-node": "^10.9.2",
+    "typescript": "^6.0.3"
+  }
+}
