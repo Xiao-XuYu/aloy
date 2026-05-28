@@ -2,9 +2,9 @@ const { app, BrowserWindow } = require('electron/main')
 // 引入 Node.js 内置 http 模块
 import http from "http"
 import { AddressInfo } from "net";
+import log from "./utils/log";
 // 引入 serve-handler
 const handler = require('serve-handler');
-console.log(process.env.MODE)
 // 创建服务器
 const server = http.createServer((request, response) => {
   // 核心：用 serve-handler 处理请求
@@ -17,9 +17,9 @@ const server = http.createServer((request, response) => {
 });
 
 server.listen(0, () => {
-  console.log('✅ 静态服务已启动：http://localhost:6600');
+  log.info('✅ 静态服务已启动：http://localhost:6600');
 });
-console.log("port", (server.address() as AddressInfo)?.port)
+log.info("port", (server.address() as AddressInfo)?.port)
 
 
 const createWindow = () => {

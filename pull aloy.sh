@@ -1,6 +1,4 @@
 SCRIPT_DIR=$(cd "$(dirname "$0")" && pwd)
 cd "$SCRIPT_DIR"
-git add -A
-git commit -m "update"
-git push
+git pull
 sleep 1
