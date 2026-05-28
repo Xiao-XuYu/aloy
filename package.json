@@ -1,0 +1,20 @@
+{
+  "name": "aloy",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "cd aloy-client && npm start"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Xiao-XuYu/aloy.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Xiao-XuYu/aloy/issues"
+  },
+  "homepage": "https://github.com/Xiao-XuYu/aloy#readme"
+}
