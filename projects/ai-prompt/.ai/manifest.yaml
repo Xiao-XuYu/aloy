@@ -1,0 +1,28 @@
+version: 1
+
+# AI 工作区入口文件
+# 无论切换到哪种AI工具，都从此文件开始
+
+read_order:
+  - context/project.md
+  - context/architecture.md
+  - context/decisions.md
+  - context/coding_style.md
+  - state/current_task.md
+  - state/todos.md
+
+write_back:
+  - state/current_task.md
+  - state/session.md
+  - state/todos.md
+  - context/decisions.md
+
+rules:
+  - 不修改架构，除非更新 decisions.md
+  - 完成任务后更新 session.md
+  - 保持 current_task.md 与代码同步
+  - 新增重要设计决策需记录到 decisions.md
+  - 不要推翻已有架构，优先延续当前方向
+  - 每次会话结束后，在 history/ 目录创建日期文件记录本次工作
+
+prompt_for_next_ai: prompts/handoff.md

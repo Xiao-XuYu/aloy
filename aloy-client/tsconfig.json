@@ -10,8 +10,12 @@
     "forceConsistentCasingInFileNames": true,
     "types": ["node"],
     "noImplicitAny": false,
+    "ignoreDeprecations": "6.0",
+    "baseUrl": "./",
+    "paths": {
+      "@/*": ["src/*"]
+    },
   },
   "include": [
-    "src/**/*"
-  ]
+    "src/**/*" ]
 }

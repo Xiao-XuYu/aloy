@@ -5,7 +5,7 @@
   "type": "commonjs",
   "scripts": {
     "start": "cross-env MODE=development npm-run-all -p watch start-electron",
-    "start-electron": "nodemon --exec electron dist/main.js",
+    "start-electron": "nodemon --watch dist --ignore dist/test --ext js --exec electron dist/main.js",
     "build": "tsc",
     "watch": "tsc -w",
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -16,11 +16,14 @@
   "description": "",
   "dependencies": {
     "electron": "^41.0.3",
+    "module-alias": "^2.3.4",
+    "moment": "^2.30.1",
     "serve-handler": "^6.1.7"
   },
   "devDependencies": {
     "@electron/typescript-definitions": "^9.1.6",
     "@types/electron": "^1.4.38",
+    "@types/moment": "^2.11.29",
     "@types/node": "^25.9.1",
     "cross-env": "^10.1.0",
     "nodemon": "^3.1.14",
@@ -28,5 +31,8 @@
     "ts-node": "^10.9.2",
     "typescript": "^6.0.3",
     "winston": "^3.19.0"
+  },
+  "_moduleAliases": {
+    "@": "dist"
   }
 }

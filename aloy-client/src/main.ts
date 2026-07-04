@@ -1,10 +1,25 @@
+import 'module-alias/register';
+
 const { app, BrowserWindow } = require('electron/main')
 // 引入 Node.js 内置 http 模块
 import http from "http"
 import { AddressInfo } from "net";
 import log from "./utils/log";
+import { runEverydayHour } from './module/timerModule';
 // 引入 serve-handler
 const handler = require('serve-handler');
+
+
+console.log("test")
+log.info("test123", {a: 123})
+
+
+// 执行定时任务
+runEverydayHour(10, () => {
+  log.info('定时任务执行成功')
+})
+
+
 // 创建服务器
 const server = http.createServer((request, response) => {
   // 核心：用 serve-handler 处理请求
@@ -15,6 +30,8 @@ const server = http.createServer((request, response) => {
     // directoryListing: true // 开启目录浏览,
   });
 });
+
+
 
 server.listen(0, () => {
   log.info('✅ 静态服务已启动：http://localhost:6600');
